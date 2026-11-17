@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgCendol" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="gulaMelaka" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgCendol)"/>
+  <!-- Glass Tall -->
+  <path d="M140 70 L155 240 Q200 255 245 240 L260 70 Z" fill="rgba(255, 255, 255, 0.25)" stroke="#ffffff" stroke-width="3"/>
+  <!-- Brown sugar syrup at bottom -->
+  <path d="M154 200 L155 240 Q200 255 245 240 L246 200 Z" fill="url(#gulaMelaka)"/>
+  <!-- Coconut milk middle -->
+  <path d="M149 110 L154 200 Q200 205 246 200 L251 110 Z" fill="#f8fafc" opacity="0.9"/>
+  <!-- Shaved ice mound at top -->
+  <path d="M138 75 Q200 30 262 75 Z" fill="#ffffff"/>
+  <!-- Green pandan cendol droplets -->
+  <ellipse cx="180" cy="180" rx="8" ry="16" fill="#15803d" transform="rotate(25 180 180)"/>
+  <ellipse cx="215" cy="165" rx="7" ry="18" fill="#16a34a" transform="rotate(-20 215 165)"/>
+  <ellipse cx="195" cy="140" rx="8" ry="15" fill="#22c55e" transform="rotate(10 195 140)"/>
+  <ellipse cx="170" cy="120" rx="6" ry="14" fill="#16a34a" transform="rotate(-15 170 120)"/>
+  <ellipse cx="225" cy="130" rx="7" ry="16" fill="#15803d" transform="rotate(30 225 130)"/>
+  <!-- Red beans & Jackfruit slices -->
+  <ellipse cx="190" cy="80" rx="14" ry="9" fill="#f59e0b"/>
+  <circle cx="210" cy="85" r="7" fill="#881337"/>
+  <!-- Straw & Mint -->
+  <line x1="220" y1="35" x2="160" y2="230" stroke="#f43f5e" stroke-width="8" stroke-linecap="round"/>
+</svg>

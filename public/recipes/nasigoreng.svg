@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgNasi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgNasi)"/>
+  <!-- Plate -->
+  <ellipse cx="200" cy="180" rx="140" ry="55" fill="#f8fafc" stroke="#e2e8f0" stroke-width="4"/>
+  <!-- Fried Rice Mound -->
+  <ellipse cx="195" cy="175" rx="100" ry="38" fill="#d97706"/>
+  <ellipse cx="195" cy="170" rx="90" ry="32" fill="#b45309"/>
+  <!-- Rice grain textures -->
+  <circle cx="160" cy="170" r="3" fill="#fef08a"/>
+  <circle cx="210" cy="165" r="3" fill="#fef08a"/>
+  <circle cx="240" cy="175" r="3" fill="#fef08a"/>
+  <!-- Sunny side up Egg (Telur Mata Sapi) -->
+  <ellipse cx="200" cy="155" rx="42" ry="24" fill="#ffffff" stroke="#f1f5f9" stroke-width="2"/>
+  <circle cx="200" cy="155" r="14" fill="#f59e0b"/>
+  <circle cx="203" cy="152" r="4" fill="#ffffff" opacity="0.6"/>
+  <!-- Cucumber slices & Tomato wedges -->
+  <ellipse cx="115" cy="180" rx="18" ry="12" fill="#84cc16" stroke="#4d7c0f" stroke-width="3"/>
+  <ellipse cx="130" cy="195" rx="18" ry="12" fill="#84cc16" stroke="#4d7c0f" stroke-width="3"/>
+  <path d="M275 170 Q290 155 295 175 Z" fill="#ef4444"/>
+  <!-- Kerupuk Udang -->
+  <ellipse cx="270" cy="195" rx="24" ry="16" fill="#fef08a" stroke="#fde047" stroke-width="2"/>
+  <!-- Steam -->
+  <path d="M200 115 Q210 90 200 65" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.7"/>
+</svg>

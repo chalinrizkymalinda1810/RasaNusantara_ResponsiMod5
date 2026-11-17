@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgSoto" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgSoto)"/>
+  <!-- Bowl -->
+  <ellipse cx="200" cy="190" rx="130" ry="40" fill="#ffffff"/>
+  <path d="M70 190 C75 255 130 275 200 275 C270 275 325 255 330 190 Z" fill="#f8fafc"/>
+  <!-- Soto Yellow Turmeric Broth -->
+  <ellipse cx="200" cy="188" rx="115" ry="32" fill="#eab308"/>
+  <!-- Shredded Chicken, Glass noodles & Egg halves -->
+  <ellipse cx="160" cy="185" rx="20" ry="14" fill="#ffffff"/>
+  <ellipse cx="160" cy="185" rx="10" ry="7" fill="#f59e0b"/>
+  <!-- Tomato & scallion garnish -->
+  <rect x="210" y="180" width="22" height="14" rx="4" fill="#ef4444"/>
+  <circle cx="190" cy="192" r="4" fill="#22c55e"/>
+  <circle cx="235" cy="188" r="5" fill="#22c55e"/>
+  <circle cx="140" cy="180" r="3" fill="#15803d"/>
+  <!-- Fried shallots (bawang goreng) -->
+  <circle cx="175" cy="195" r="3" fill="#78350f"/>
+  <circle cx="215" cy="195" r="3" fill="#78350f"/>
+  <!-- Steam -->
+  <path d="M190 140 Q180 115 195 90" stroke="#fef08a" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M220 130 Q235 105 220 80" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
+</svg>

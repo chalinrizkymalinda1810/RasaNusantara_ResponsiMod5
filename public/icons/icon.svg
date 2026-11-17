@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="50%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded App Icon Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Decorative Ring -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#fde047" stroke-width="4" stroke-dasharray="12 12" opacity="0.35"/>
+
+  <!-- Steaming Bowl Group -->
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Aroma / Steam curves -->
+    <path d="M200 130 Q185 100 205 75 Q225 50 205 25" fill="none" stroke="url(#goldGrad)" stroke-width="14" stroke-linecap="round" opacity="0.85"/>
+    <path d="M256 120 Q240 85 260 55 Q280 25 260 5" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" opacity="0.95"/>
+    <path d="M312 130 Q330 100 310 75 Q290 50 310 25" fill="none" stroke="url(#goldGrad)" stroke-width="14" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Bowl Rim Rim -->
+    <path d="M110 230 Q256 250 402 230 C402 230 415 250 395 260 Q256 280 117 260 C97 250 110 230 110 230 Z" fill="#ffffff" opacity="0.95"/>
+
+    <!-- Delicious Soup / Broth Inside -->
+    <ellipse cx="256" cy="235" rx="140" ry="25" fill="#f59e0b"/>
+    <circle cx="215" cy="235" r="14" fill="#ef4444"/>
+    <circle cx="280" cy="233" r="10" fill="#22c55e"/>
+    <circle cx="305" cy="238" r="12" fill="#d97706"/>
+
+    <!-- Bowl Body -->
+    <path d="M115 245 C125 355 195 400 256 400 C317 400 387 355 397 245 Z" fill="#ffffff"/>
+
+    <!-- Traditional Batik / Motif on Bowl -->
+    <path d="M150 280 Q256 320 362 280" fill="none" stroke="#ea580c" stroke-width="8" stroke-linecap="round"/>
+    <path d="M175 320 Q256 355 337 320" fill="none" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Bowl Foot Stand -->
+    <path d="M196 400 L185 425 Q256 438 327 425 L316 400 Z" fill="#f8fafc"/>
+
+    <!-- Chopsticks / Spoon angled -->
+    <line x1="330" y1="140" x2="425" y2="330" stroke="#fde047" stroke-width="12" stroke-linecap="round"/>
+    <line x1="355" y1="130" x2="450" y2="320" stroke="#fef08a" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>

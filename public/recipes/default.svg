@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bgDef" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgDef)"/>
+  <!-- Plate -->
+  <ellipse cx="200" cy="180" rx="135" ry="50" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
+  <!-- Cloche / Food Cover -->
+  <path d="M110 170 Q200 60 290 170 Z" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/>
+  <circle cx="200" cy="65" r="12" fill="#ea580c"/>
+  <path d="M160 170 Q200 120 240 170" fill="none" stroke="#fdba74" stroke-width="4"/>
+  <!-- Steam sparkle -->
+  <path d="M140 50 Q130 30 145 15" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M260 50 Q270 30 255 15" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/>
+</svg>
