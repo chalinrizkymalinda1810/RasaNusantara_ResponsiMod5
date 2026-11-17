@@ -26,18 +26,8 @@ import {
 } from '../utils/draftStorage'
 import ConfirmModal from '../components/modals/ConfirmModal'
 
-const PRESET_IMAGES = [
-  { label: 'Rendang Sapi', url: '/recipes/rendang.jpg' },
-  { label: 'Soto Betawi', url: '/recipes/soto.jpg' },
-  { label: 'Sate Madura', url: '/recipes/sate.jpg' },
-  { label: 'Es Cendol Dawet', url: '/recipes/cendol.jpg' },
-  { label: 'Nasi Goreng', url: '/recipes/nasigoreng.jpg' },
-  { label: 'Gado-Gado', url: '/recipes/gadogado.jpg' },
-  { label: 'Aneka Masakan', url: '/recipes/default.jpg' },
-]
-
 export default function CreateRecipePage({ onBack, onSuccess }) {
-  const [currentStep, setCurrentStep] = useState('form') // 'media' | 'form'
+  const [currentStep, setCurrentStep] = useState('form')
 
   const [formData, setFormData] = useState({
     name: '',
@@ -50,7 +40,7 @@ export default function CreateRecipePage({ onBack, onSuccess }) {
     servings: 4,
     description: '',
     is_featured: false,
-    image_url: '/recipes/rendang.jpg',
+    image_url: '/recipes/default.jpg',
   })
 
   // Dynamic Ingredients state
@@ -294,52 +284,39 @@ export default function CreateRecipePage({ onBack, onSuccess }) {
         <div className="form-card">
           <h2 className="form-card-title">Foto Masakan</h2>
           <p className="form-card-desc">
-            Pilih foto dari pilihan masakan di bawah atau unggah foto masakan Anda sendiri:
+            Unggah gambar masakan:
           </p>
 
-          <div className="image-selector-wrap">
+          <div className="image-direct-upload-box">
             <div className="current-image-preview">
               <img src={formData.image_url} alt="Pratinjau Foto Masakan" />
-              <div className="preview-status-pill">Foto Terpilih</div>
+              <div className="preview-status-pill">Foto Masakan</div>
             </div>
 
-            <div className="image-options">
-              <span className="options-title">Pilihan Foto Masakan:</span>
-              <div className="preset-pills-grid">
-                {PRESET_IMAGES.map((preset) => (
-                  <button
-                    key={preset.url}
-                    type="button"
-                    className={`preset-pill ${formData.image_url === preset.url ? 'preset-pill--active' : ''}`}
-                    onClick={() => setFormData((p) => ({ ...p, image_url: preset.url }))}
-                  >
-                    {preset.label}
-                  </button>
-                ))}
-              </div>
+            <div className="upload-controls-col">
+              <label htmlFor="custom-recipe-file" className="btn btn--primary">
+                <Upload size={16} /> Unggah Foto dari Perangkat
+              </label>
+              <input
+                id="custom-recipe-file"
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden-file-input"
+              />
 
-              <div className="upload-and-url-group">
-                <label htmlFor="custom-recipe-file" className="btn btn--outline btn--sm">
-                  <Upload size={14} /> Unggah Foto dari Perangkat
-                </label>
-                <input
-                  id="custom-recipe-file"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden-file-input"
-                />
-
+              <div className="url-input-wrap">
+                <span className="or-text">Atau tempel tautan URL gambar web:</span>
                 <input
                   type="url"
-                  placeholder="Atau tempel link URL foto (https://...)"
+                  placeholder="https://... (URL foto online)"
                   value={formData.image_url.startsWith('data:') || formData.image_url.startsWith('/recipes/') ? '' : formData.image_url}
                   onChange={(e) => {
                     if (e.target.value.trim()) {
                       setFormData((p) => ({ ...p, image_url: e.target.value.trim() }))
                     }
                   }}
-                  className="input-text input-text--sm"
+                  className="input-text"
                 />
               </div>
             </div>

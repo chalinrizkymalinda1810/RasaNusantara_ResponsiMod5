@@ -1350,19 +1350,37 @@ body {
   letter-spacing: 0.03em;
 }
 
-.upload-and-url-group {
-  display: flex;
+.image-direct-upload-box {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 6px;
 }
 
-.input-text--sm {
-  padding: 8px 12px;
-  font-size: 0.85rem;
-  flex: 1;
-  min-width: 200px;
+@media (max-width: 640px) {
+  .image-direct-upload-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.upload-controls-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.url-input-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.or-text {
+  font-size: 0.82rem;
+  color: var(--steel);
+  font-weight: 500;
 }
 
 .image-options {

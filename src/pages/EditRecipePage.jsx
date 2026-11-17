@@ -24,16 +24,6 @@ import {
 } from '../utils/draftStorage'
 import ConfirmModal from '../components/modals/ConfirmModal'
 
-const PRESET_IMAGES = [
-  { label: 'Rendang Sapi', url: '/recipes/rendang.jpg' },
-  { label: 'Soto Betawi', url: '/recipes/soto.jpg' },
-  { label: 'Sate Madura', url: '/recipes/sate.jpg' },
-  { label: 'Es Cendol Dawet', url: '/recipes/cendol.jpg' },
-  { label: 'Nasi Goreng', url: '/recipes/nasigoreng.jpg' },
-  { label: 'Gado-Gado', url: '/recipes/gadogado.jpg' },
-  { label: 'Aneka Masakan', url: '/recipes/default.jpg' },
-]
-
 export default function EditRecipePage({ recipe, recipeId, onBack, onSuccess }) {
   const targetId = recipeId || recipe?.id
 
@@ -297,52 +287,39 @@ export default function EditRecipePage({ recipe, recipeId, onBack, onSuccess }) 
         <div className="form-card">
           <h2 className="form-card-title">Foto Masakan</h2>
           <p className="form-card-desc">
-            Pilih foto dari pilihan masakan di bawah atau unggah foto masakan baru dari perangkat Anda:
+            Unggah gambar masakan:
           </p>
 
-          <div className="image-selector-wrap">
+          <div className="image-direct-upload-box">
             <div className="current-image-preview">
               <img src={formData.image_url} alt="Pratinjau Foto Masakan" />
-              <div className="preview-status-pill">Foto Terpilih</div>
+              <div className="preview-status-pill">Foto Masakan</div>
             </div>
 
-            <div className="image-options">
-              <span className="options-title">Pilihan Foto Masakan:</span>
-              <div className="preset-pills-grid">
-                {PRESET_IMAGES.map((preset) => (
-                  <button
-                    key={preset.url}
-                    type="button"
-                    className={`preset-pill ${formData.image_url === preset.url ? 'preset-pill--active' : ''}`}
-                    onClick={() => setFormData((p) => ({ ...p, image_url: preset.url }))}
-                  >
-                    {preset.label}
-                  </button>
-                ))}
-              </div>
+            <div className="upload-controls-col">
+              <label htmlFor="edit-custom-file" className="btn btn--primary">
+                <Upload size={16} /> Pilih Foto Baru dari Perangkat
+              </label>
+              <input
+                id="edit-custom-file"
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden-file-input"
+              />
 
-              <div className="upload-and-url-group">
-                <label htmlFor="edit-custom-file" className="btn btn--outline btn--sm">
-                  <Upload size={14} /> Pilih Foto Baru dari Perangkat
-                </label>
-                <input
-                  id="edit-custom-file"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden-file-input"
-                />
-
+              <div className="url-input-wrap">
+                <span className="or-text">Atau tempel tautan URL gambar web:</span>
                 <input
                   type="url"
-                  placeholder="Atau tempel link URL foto (https://...)"
+                  placeholder="https://... (URL foto online)"
                   value={formData.image_url.startsWith('data:') || formData.image_url.startsWith('/recipes/') ? '' : formData.image_url}
                   onChange={(e) => {
                     if (e.target.value.trim()) {
                       setFormData((p) => ({ ...p, image_url: e.target.value.trim() }))
                     }
                   }}
-                  className="input-text input-text--sm"
+                  className="input-text"
                 />
               </div>
             </div>
