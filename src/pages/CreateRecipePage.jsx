@@ -27,13 +27,13 @@ import {
 import ConfirmModal from '../components/modals/ConfirmModal'
 
 const PRESET_IMAGES = [
-  { label: 'Rendang Sapi', url: '/recipes/rendang.svg' },
-  { label: 'Soto Betawi', url: '/recipes/soto.svg' },
-  { label: 'Sate Madura', url: '/recipes/sate.svg' },
-  { label: 'Es Cendol Dawet', url: '/recipes/cendol.svg' },
-  { label: 'Nasi Goreng', url: '/recipes/nasigoreng.svg' },
-  { label: 'Gado-Gado', url: '/recipes/gadogado.svg' },
-  { label: 'Koleksi Masakan', url: '/recipes/default.svg' },
+  { label: 'Rendang Sapi', url: '/recipes/rendang.jpg' },
+  { label: 'Soto Betawi', url: '/recipes/soto.jpg' },
+  { label: 'Sate Madura', url: '/recipes/sate.jpg' },
+  { label: 'Es Cendol Dawet', url: '/recipes/cendol.jpg' },
+  { label: 'Nasi Goreng', url: '/recipes/nasigoreng.jpg' },
+  { label: 'Gado-Gado', url: '/recipes/gadogado.jpg' },
+  { label: 'Aneka Masakan', url: '/recipes/default.jpg' },
 ]
 
 export default function CreateRecipePage({ onBack, onSuccess }) {
@@ -50,7 +50,7 @@ export default function CreateRecipePage({ onBack, onSuccess }) {
     servings: 4,
     description: '',
     is_featured: false,
-    image_url: '/recipes/rendang.svg',
+    image_url: '/recipes/rendang.jpg',
   })
 
   // Dynamic Ingredients state
@@ -226,7 +226,7 @@ export default function CreateRecipePage({ onBack, onSuccess }) {
       description:
         formData.description.trim() ||
         `${formData.name} khas ${formData.origin || 'Indonesia'} yang lezat dan kaya rempah.`,
-      image_url: formData.image_url || '/recipes/default.svg',
+      image_url: formData.image_url || '/recipes/default.jpg',
       is_featured: Boolean(formData.is_featured),
       ingredients: cleanIngredients,
       steps: cleanSteps,
@@ -290,21 +290,21 @@ export default function CreateRecipePage({ onBack, onSuccess }) {
 
       {/* Form Container */}
       <form onSubmit={handleSubmit} className="recipe-form">
-        {/* Section 1: Visual Asset / Foto Masakan */}
+        {/* Section 1: Foto Masakan */}
         <div className="form-card">
-          <h2 className="form-card-title">Ilustrasi &amp; Foto Masakan</h2>
+          <h2 className="form-card-title">Foto Masakan</h2>
           <p className="form-card-desc">
-            Pilih salah satu preset vektor kuliner atau unggah gambar masakan Anda:
+            Pilih foto dari pilihan masakan di bawah atau unggah foto masakan Anda sendiri:
           </p>
 
           <div className="image-selector-wrap">
             <div className="current-image-preview">
-              <img src={formData.image_url} alt="Pratinjau Resep" />
-              <span className="preview-label">Ilustrasi Terpilih</span>
+              <img src={formData.image_url} alt="Pratinjau Foto Masakan" />
+              <div className="preview-status-pill">Foto Terpilih</div>
             </div>
 
             <div className="image-options">
-              <span className="options-title">Pilih Preset Vektor Otentik:</span>
+              <span className="options-title">Pilihan Foto Masakan:</span>
               <div className="preset-pills-grid">
                 {PRESET_IMAGES.map((preset) => (
                   <button
@@ -318,7 +318,7 @@ export default function CreateRecipePage({ onBack, onSuccess }) {
                 ))}
               </div>
 
-              <div className="upload-file-option">
+              <div className="upload-and-url-group">
                 <label htmlFor="custom-recipe-file" className="btn btn--outline btn--sm">
                   <Upload size={14} /> Unggah Foto dari Perangkat
                 </label>
@@ -328,6 +328,18 @@ export default function CreateRecipePage({ onBack, onSuccess }) {
                   accept="image/*"
                   onChange={handleFileChange}
                   className="hidden-file-input"
+                />
+
+                <input
+                  type="url"
+                  placeholder="Atau tempel link URL foto (https://...)"
+                  value={formData.image_url.startsWith('data:') || formData.image_url.startsWith('/recipes/') ? '' : formData.image_url}
+                  onChange={(e) => {
+                    if (e.target.value.trim()) {
+                      setFormData((p) => ({ ...p, image_url: e.target.value.trim() }))
+                    }
+                  }}
+                  className="input-text input-text--sm"
                 />
               </div>
             </div>

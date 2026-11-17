@@ -7,7 +7,7 @@ import FavoriteButton from '../common/FavoriteButton'
 import { formatRupiah, formatTime, truncate } from '../../utils/helpers'
 
 export default function RecipeCard({ recipe, onSelect, onEdit, onDelete }) {
-  const imgSrc = recipe.image_url || '/recipes/default.svg'
+  const imgSrc = recipe.image_url || '/recipes/default.jpg'
   const rating = Number(recipe.average_rating) || 5.0
   const reviewCount = recipe.review_count || 0
 

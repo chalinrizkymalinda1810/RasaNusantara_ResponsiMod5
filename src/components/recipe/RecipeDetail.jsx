@@ -24,7 +24,7 @@ import { formatRupiah, formatTime } from '../../utils/helpers'
 
 export default function RecipeDetail({ recipe, onBack, onEdit, onDelete }) {
   const profile = userService.getUserProfile()
-  const imgSrc = recipe.image_url || '/recipes/default.svg'
+  const imgSrc = recipe.image_url || '/recipes/default.jpg'
 
   // Checklist state for ingredients (local interactive state)
   const [checkedIngredients, setCheckedIngredients] = useState({})

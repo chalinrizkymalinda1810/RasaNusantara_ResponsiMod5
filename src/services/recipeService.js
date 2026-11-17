@@ -13,8 +13,23 @@ const readLocalRecipes = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (raw) {
-      const parsed = JSON.parse(raw)
+      let parsed = JSON.parse(raw)
       if (Array.isArray(parsed) && parsed.length > 0) {
+        // Auto-migrasi path gambar dari .svg lama ke .jpg foto asli
+        let hasChanges = false
+        parsed = parsed.map((item) => {
+          if (item.image_url && item.image_url.endsWith('.svg')) {
+            hasChanges = true
+            return {
+              ...item,
+              image_url: item.image_url.replace(/\.svg$/, '.jpg'),
+            }
+          }
+          return item
+        })
+        if (hasChanges) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed))
+        }
         return parsed
       }
     }
@@ -124,7 +139,7 @@ class RecipeService {
       created_at: new Date().toISOString(),
       average_rating: data.average_rating || 5.0,
       review_count: data.review_count || 0,
-      image_url: data.image_url || '/recipes/default.svg',
+      image_url: data.image_url || '/recipes/default.jpg',
     }
 
     // Simpan ke database lokal
